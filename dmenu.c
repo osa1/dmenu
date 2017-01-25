@@ -251,17 +251,24 @@ keypress(XKeyEvent *ev) {
 		case XK_d: ksym = XK_Delete;    break;
 		case XK_e: ksym = XK_End;       break;
 		case XK_f: ksym = XK_Right;     break;
-		case XK_h: ksym = XK_BackSpace; break;
+		// case XK_h: ksym = XK_BackSpace; break;
 		case XK_i: ksym = XK_Tab;       break;
-		case XK_j: ksym = XK_Return;    break;
+		// case XK_j: ksym = XK_Return;    break;
 		case XK_m: ksym = XK_Return;    break;
 		case XK_n: ksym = XK_Down;      break;
 		case XK_p: ksym = XK_Up;        break;
 
-		case XK_k: /* delete right */
-			text[cursor] = '\0';
-			match();
-			break;
+		// case XK_k: /* delete right */
+		// 	text[cursor] = '\0';
+		// 	match();
+		// 	break;
+
+		// vi-style movement
+		case XK_h: ksym = XK_Left;      break;
+		case XK_j: ksym = XK_Down;      break;
+		case XK_k: ksym = XK_Up;        break;
+		case XK_l: ksym = XK_Right;     break;
+
 		case XK_u: /* delete left */
 			insert(NULL, 0 - cursor);
 			break;
